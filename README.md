@@ -16,7 +16,7 @@ Per the project instructions, only variables measuring mean() and std() are sele
 
 The activity column is replaced by an equivalent column with more descriptive labels 
 
-Finally, the script groups the newly tidied data by volunteer, activity_name, and variable and then summarizes each group by its mean. The resulting data table is shown below. 
+Finally, the script groups the newly tidied data by volunteer, activity_name, and variable and then summarizes each group by its mean. A script to view the resulting data table is shown below. 
 
 ```r
 address <- "http://coursera-assessments.s3.amazonaws.com/assessments/1586222093703/4bc90c21-4b4b-4da4-f65e-c9103438ae9b/final_tidy_data.txt"
