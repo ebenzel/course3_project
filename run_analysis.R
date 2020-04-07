@@ -56,8 +56,9 @@ data <- data %>%
 # Create final tidy data set average of each variable for each activity and each subject.
 data_final <- data %>%
         group_by(volunteer, activity_name) %>%
-        summarize(average = mean(measurement)) %>%
-        write.table("finaltidydata.txt",row.names = FALSE)
+        summarize(average = mean(measurement))
+        
+write.table(data_final, "final_tidy_data.txt",row.names = FALSE)
         
 
         
