@@ -55,7 +55,3 @@ data_final <- data %>%
         summarize(average = mean(measurement))
         
 write.table(data_final, "final_tidy_data.txt",row.names = FALSE)
-        
-
-        
-        
