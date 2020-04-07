@@ -1,4 +1,4 @@
-# The tidy data file "final_tidy_data.txt" producued by the script "run_analysis.R" contains information on the following variables:
+# The tidy data file "final_tidy_data.txt" produced by the script "run_analysis.R" contains information on the following variables:
 
 ## volunteer
 ### The variable contains integer value with value [1,30] indicating the participant in the study for which the data was collected
