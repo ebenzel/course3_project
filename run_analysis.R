@@ -26,7 +26,7 @@ names(subject) <- "volunteer"
 x <- bind_rows(x_test, x_train)
 names(x) <- features_labels$feature
 
-dy <- bind_rows(y_test, y_train)
+y <- bind_rows(y_test, y_train)
 names(y) <- "activity"
 
 data <- bind_cols(subject, y, x)
