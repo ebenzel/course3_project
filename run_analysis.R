@@ -33,16 +33,12 @@ data <- bind_cols(subject, y, x)
 
 
 # Extract only measurements for mean and standard deviation
-data <- select(data, "volunteer", "activity", contains("mean"), contains("std"))
+data <- select(data, "volunteer", "activity", contains("mean"), contains("std"), -contains("angle"), -contains("meanFreq"))
 
 
 # tidy data by reshaping data to provide only one feature per observation
 data <- data %>%
         gather("tBodyAcc-mean()-X":"fBodyBodyGyroJerkMag-std()", key = "variable", value = "measurement") #%>%
-        #separate(feature, sep = "-", into = c("feature", "variable", "direction")) %>%
-        #separate(variable, sep = "\\(", into = c("variable", "trash")) %>%
-        #select(-trash)
-
 
 # tidy data by rename activities using meaningful activity labels
 names(activity_labels) <- c("activity","activity_name")
@@ -55,7 +51,7 @@ data <- data %>%
 
 # Create final tidy data set average of each variable for each activity and each subject.
 data_final <- data %>%
-        group_by(volunteer, activity_name) %>%
+        group_by(volunteer, activity_name, variable) %>%
         summarize(average = mean(measurement))
         
 write.table(data_final, "final_tidy_data.txt",row.names = FALSE)
